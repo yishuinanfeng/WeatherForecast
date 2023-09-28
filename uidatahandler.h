@@ -4,6 +4,8 @@
 #include "UiWeatherBean.h"
 #include "weatherdata.h"
 
+#include <QMap>
+#include <QList>
 
 
 /**
@@ -12,14 +14,19 @@
  */
 class UiDataHandler
 {
+private:
+    QMap<QString,QString> weatherTypeMap;
+
 public:
     UiDataHandler();
 
-    UiTodayWeather getTodayWeatherInfo(WeatherData *weather);
+    UiTodayWeather* getTodayWeatherInfo(WeatherData *weather);
 
-    UiTodayExtraInfo getTodayWeatherExtraInfo(WeatherData *weather);
+    UiTodayExtraInfo* getTodayWeatherExtraInfo(WeatherData *weather);
 
-    UiRecentDayWeather getRecentDayWeatherExtraInfo(WeatherData *weather);
+    QList<UiRecentDayWeather>* getRecentDayWeatherExtraInfo(WeatherData *weather);
+
+    UiTitle* getTitleInfo(WeatherData *weather);
 };
 
 #endif // UIDATAHANDLER_H

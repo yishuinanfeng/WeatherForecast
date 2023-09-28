@@ -1,3 +1,4 @@
+#include <QList>
 #include <QString>
 
 #ifndef UIWEATHERBEAN_H
@@ -12,28 +13,42 @@
 
 class UiTodayWeather{
 public:
-    QString icon;
-    int tempture;
-    QString city;
-    QString temptureRange;
-    QString decs;
+    QString icon = "";
+    QString tempture = "";
+    QString city = "";
+    QString temptureRange = "";
+    QString type = "";
+};
+
+class UiTodayExtraInfoItem{
+public:
+    UiTodayExtraInfoItem(){}
+
+    QString icon = "";
+    QString title = "";
+    QString degree = "";
 };
 
 class UiTodayExtraInfo{
 public:
-    QString icon;
-    QString title;
-    QString detail;
+    QString ganmao = "";
+    QList<UiTodayExtraInfoItem> extraInfoItemList = QList<UiTodayExtraInfoItem>();
 };
 
 class UiRecentDayWeather{
-    QString dayWeek;
-    QString date;
-    QString decs;
-    QString icon;
-    QString airQuality;
-    QString windDirection;
-    QString windDegree;
+public:
+    QString dayWeek = "";
+    QString date = "";
+    QString type = "";
+    QString icon = "";
+    QString airQuality = "";
+    QString windDirection = "";
+    QString windDegree = "";
+};
+
+class UiTitle{
+public:
+    QString title = "";
 };
 
 
