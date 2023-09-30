@@ -228,7 +228,7 @@ background-color: rgba(255, 255, 255,0);</string>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_3">
              <item>
-              <widget class="QLabel" name="state_pic">
+              <widget class="QLabel" name="ll_state_pic">
                <property name="minimumSize">
                 <size>
                  <width>110</width>
@@ -334,7 +334,7 @@ font: 12pt &quot;微软雅黑&quot;;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="ll_temp">
+                  <widget class="QLabel" name="ll_tempture_range">
                    <property name="styleSheet">
                     <string notr="true">background-color: rgba(255, 255, 255,0);
 font: 12pt &quot;微软雅黑&quot;;</string>
@@ -387,7 +387,7 @@ font: 12pt &quot;微软雅黑&quot;;</string>
               </spacer>
              </item>
              <item>
-              <widget class="QLabel" name="label">
+              <widget class="QLabel" name="ll_ganmao">
                <property name="styleSheet">
                 <string notr="true">background-color: rgba(60, 60, 60, 0);
 padding-left: 5px;
@@ -407,7 +407,7 @@ padding-right: 5px;</string>
                 <string notr="true">background-color: rgb(157, 133, 255);
 border-radius: 15px</string>
                </property>
-               <layout class="QGridLayout" name="gridLayout" rowstretch="0,0" columnstretch="0,0,0,0,0">
+               <layout class="QGridLayout" name="gridLayout" rowstretch="0,0" columnstretch="0,0,0">
                 <property name="leftMargin">
                  <number>40</number>
                 </property>
@@ -432,7 +432,7 @@ border-radius: 15px</string>
                    <number>0</number>
                   </property>
                   <item>
-                   <widget class="QLabel" name="label_4">
+                   <widget class="QLabel" name="ll_wet_icon">
                     <property name="minimumSize">
                      <size>
                       <width>40</width>
@@ -459,7 +459,7 @@ border-radius: 15px</string>
                   <item>
                    <layout class="QVBoxLayout" name="verticalLayout_9">
                     <item>
-                     <widget class="QLabel" name="label_36">
+                     <widget class="QLabel" name="ll_wet">
                       <property name="text">
                        <string>湿度</string>
                       </property>
@@ -469,7 +469,7 @@ border-radius: 15px</string>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLabel" name="label_37">
+                     <widget class="QLabel" name="ll_wet_value">
                       <property name="text">
                        <string>60%</string>
                       </property>
@@ -488,7 +488,7 @@ border-radius: 15px</string>
                    <number>0</number>
                   </property>
                   <item>
-                   <widget class="QLabel" name="label_3">
+                   <widget class="QLabel" name="ll_pm25_icon">
                     <property name="minimumSize">
                      <size>
                       <width>40</width>
@@ -515,7 +515,7 @@ border-radius: 15px</string>
                   <item>
                    <layout class="QVBoxLayout" name="verticalLayout_8">
                     <item>
-                     <widget class="QLabel" name="label_34">
+                     <widget class="QLabel" name="ll_pm25">
                       <property name="text">
                        <string>PM2.5</string>
                       </property>
@@ -525,7 +525,7 @@ border-radius: 15px</string>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLabel" name="label_35">
+                     <widget class="QLabel" name="ll_pm25_value">
                       <property name="text">
                        <string>10</string>
                       </property>
@@ -544,7 +544,7 @@ border-radius: 15px</string>
                    <number>0</number>
                   </property>
                   <item>
-                   <widget class="QLabel" name="label_2">
+                   <widget class="QLabel" name="ll_wind_icon">
                     <property name="minimumSize">
                      <size>
                       <width>40</width>
@@ -571,7 +571,7 @@ border-radius: 15px</string>
                   <item>
                    <layout class="QVBoxLayout" name="verticalLayout_7">
                     <item>
-                     <widget class="QLabel" name="label_32">
+                     <widget class="QLabel" name="ll_wind">
                       <property name="text">
                        <string>西北风</string>
                       </property>
@@ -581,7 +581,7 @@ border-radius: 15px</string>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLabel" name="label_33">
+                     <widget class="QLabel" name="ll_wind_value">
                       <property name="text">
                        <string>3级</string>
                       </property>
@@ -600,7 +600,7 @@ border-radius: 15px</string>
                    <number>0</number>
                   </property>
                   <item>
-                   <widget class="QLabel" name="label_5">
+                   <widget class="QLabel" name="ll_air_icon">
                     <property name="minimumSize">
                      <size>
                       <width>40</width>
@@ -627,7 +627,7 @@ border-radius: 15px</string>
                   <item>
                    <layout class="QVBoxLayout" name="verticalLayout_10">
                     <item>
-                     <widget class="QLabel" name="label_39">
+                     <widget class="QLabel" name="ll_air_value">
                       <property name="text">
                        <string>空气质量</string>
                       </property>
@@ -637,7 +637,7 @@ border-radius: 15px</string>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLabel" name="label_38">
+                     <widget class="QLabel" name="ll_air_quality">
                       <property name="text">
                        <string>优</string>
                       </property>

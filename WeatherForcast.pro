@@ -12,12 +12,14 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     uidatahandler.cpp \
+    uiupdater.cpp \
     weatherdatatransformer.cpp
 
 HEADERS += \
     UiWeatherBean.h \
     mainwindow.h \
     uidatahandler.h \
+    uiupdater.h \
     weatherdata.h \
     weatherdatatransformer.h
 

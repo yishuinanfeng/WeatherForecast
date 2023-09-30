@@ -44,12 +44,11 @@ UiDataHandler::UiDataHandler()
 UiTodayWeather* UiDataHandler::getTodayWeatherInfo(WeatherData *weather)
 {
     UiTodayWeather *uiTodayWeather = new UiTodayWeather();
-    QString type = weather->data.forecast[1].type;
+    QString type = weather->data.forecast[0].type;
     uiTodayWeather->icon = weatherTypeMap[type];
     uiTodayWeather->city = weather->cityInfo.city;
-    uiTodayWeather->tempture = weather->data.wendu;
-    uiTodayWeather->type = weather->data.wendu;
-    uiTodayWeather->tempture = weather->data.wendu;
+    uiTodayWeather->tempture = weather->data.wendu + "℃";
+    uiTodayWeather->type = type;
     uiTodayWeather->temptureRange = weather->data.forecast[1].low + "~" + weather->data.forecast[1].high;
     return uiTodayWeather;
 }
@@ -61,20 +60,24 @@ UiTodayExtraInfo* UiDataHandler::getTodayWeatherExtraInfo(WeatherData *weather)
     QList<UiTodayExtraInfoItem> extraInfoItemList = QList<UiTodayExtraInfoItem>();
     UiTodayExtraInfoItem uiTodayExtraInfoItem;
     uiTodayExtraInfoItem.icon = ":/res/wind.png";
-    uiTodayExtraInfoItem.title = weather->data.forecast[1].fx;
-    uiTodayExtraInfoItem.degree = weather->data.forecast[1].fl;
+    uiTodayExtraInfoItem.title = weather->data.forecast[0].fx;
+    uiTodayExtraInfoItem.degree = weather->data.forecast[0].fl;
+    extraInfoItemList.append(uiTodayExtraInfoItem);
 
     uiTodayExtraInfoItem.icon = ":/res/pm25.png";
     uiTodayExtraInfoItem.title = "PM2.5";
-    uiTodayExtraInfoItem.degree = weather->data.pm25;
+    uiTodayExtraInfoItem.degree = QString::number(weather->data.pm25);
+    extraInfoItemList.append(uiTodayExtraInfoItem);
 
     uiTodayExtraInfoItem.icon = ":/res/humidity.png";
     uiTodayExtraInfoItem.title = "湿度";
     uiTodayExtraInfoItem.degree = weather->data.shidu;
+    extraInfoItemList.append(uiTodayExtraInfoItem);
 
     uiTodayExtraInfoItem.icon = ":/res/aqi.png";
     uiTodayExtraInfoItem.title = "空气质量";
     uiTodayExtraInfoItem.degree = weather->data.quality;
+    extraInfoItemList.append(uiTodayExtraInfoItem);
 
     uiTodayExtraInfo->extraInfoItemList = extraInfoItemList;
     return uiTodayExtraInfo;

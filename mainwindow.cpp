@@ -7,6 +7,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonParseError>
+#include <UiUpdater.h>
 #include <WeatherDataTransformer.h>
 
 
@@ -63,9 +64,10 @@ void MainWindow::onNetReply(QNetworkReply *reply)
         WeatherDataTransformer weatherDataTransformer;
         WeatherData weatherData = weatherDataTransformer.parseJson(&byteArray);
         qDebug() << "weatherData:" << weatherData;
+
+        UiUpdater uiUpdater;
+        uiUpdater.update(ui,&weatherData);
     }
-
-
 }
 
 void MainWindow::contextMenuEvent(QContextMenuEvent *event)

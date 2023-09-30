@@ -67,12 +67,12 @@ Data WeatherDataTransformer::getDataFromJson(QJsonObject *dataObject)
 {
     Data data;
 
-    data.shidu = dataObject->value("updateTime").toString();
-    data.pm25 = dataObject->value("updateTime").toInt();
-    data.pm10 = dataObject->value("updateTime").toInt();
-    data.quality = dataObject->value("updateTime").toString();
-    data.wendu = dataObject->value("updateTime").toString();
-    data.ganmao = dataObject->value("updateTime").toString();
+    data.shidu = dataObject->value("shidu").toString();
+    data.pm25 = dataObject->value("pm25").toInt();
+    data.pm10 = dataObject->value("pm10").toInt();
+    data.quality = dataObject->value("quality").toString();
+    data.wendu = dataObject->value("wendu").toString();
+    data.ganmao = dataObject->value("ganmao").toString();
 
     QJsonArray forecast = dataObject->value("forecast").toArray();
     // 使用迭代器遍历QJsonArray
