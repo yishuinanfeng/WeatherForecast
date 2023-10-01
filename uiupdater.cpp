@@ -71,3 +71,8 @@ void UiUpdater::updateTodayWeatherExtraInfo(Ui::MainWindow *ui, WeatherData *wea
 
 
 }
+
+void UiUpdater::updateRecentDayWeather(Ui::MainWindow *ui, WeatherData *weatherData)
+{
+
+}

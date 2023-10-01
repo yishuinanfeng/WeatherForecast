@@ -717,7 +717,7 @@ QVBoxLayout{
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="ll_today">
+                 <widget class="QLabel" name="ll_week_day2">
                   <property name="styleSheet">
                    <string notr="true">border-bottom-left-radius: 0px;
 border-bottom-right-radius: 0px;</string>
@@ -731,7 +731,7 @@ border-bottom-right-radius: 0px;</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="ll_today_date">
+                 <widget class="QLabel" name="ll_week2">
                   <property name="styleSheet">
                    <string notr="true">border-top-left-radius: 0px;
 border-top-right-radius: 0px;</string>
@@ -752,7 +752,7 @@ border-top-right-radius: 0px;</string>
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_6">
+                 <widget class="QLabel" name="ll_week_day3">
                   <property name="styleSheet">
                    <string notr="true">border-bottom-left-radius: 0px;
 border-bottom-right-radius: 0px;</string>
@@ -766,7 +766,7 @@ border-bottom-right-radius: 0px;</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="label_7">
+                 <widget class="QLabel" name="ll_week3">
                   <property name="styleSheet">
                    <string notr="true">border-top-left-radius: 0px;
 border-top-right-radius: 0px;</string>
@@ -787,7 +787,7 @@ border-top-right-radius: 0px;</string>
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_8">
+                 <widget class="QLabel" name="ll_week_day4">
                   <property name="styleSheet">
                    <string notr="true">border-bottom-left-radius: 0px;
 border-bottom-right-radius: 0px;</string>
@@ -801,7 +801,7 @@ border-bottom-right-radius: 0px;</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="label_9">
+                 <widget class="QLabel" name="ll_week4">
                   <property name="styleSheet">
                    <string notr="true">border-top-left-radius: 0px;
 border-top-right-radius: 0px;</string>
@@ -822,7 +822,7 @@ border-top-right-radius: 0px;</string>
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_11">
+                 <widget class="QLabel" name="ll_week_day5">
                   <property name="styleSheet">
                    <string notr="true">border-bottom-left-radius: 0px;
 border-bottom-right-radius: 0px;</string>
@@ -836,7 +836,7 @@ border-bottom-right-radius: 0px;</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="label_10">
+                 <widget class="QLabel" name="ll_week5">
                   <property name="text">
                    <string>01/05</string>
                   </property>
@@ -853,7 +853,7 @@ border-bottom-right-radius: 0px;</string>
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_12">
+                 <widget class="QLabel" name="ll_week_day6">
                   <property name="styleSheet">
                    <string notr="true">border-bottom-left-radius: 0px;
 border-bottom-right-radius: 0px;</string>
@@ -867,7 +867,7 @@ border-bottom-right-radius: 0px;</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="label_13">
+                 <widget class="QLabel" name="ll_wee5">
                   <property name="styleSheet">
                    <string notr="true">border-top-left-radius: 0px;
 border-top-right-radius: 0px;</string>
@@ -888,7 +888,7 @@ border-top-right-radius: 0px;</string>
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="ll_yesterday">
+                 <widget class="QLabel" name="ll_week_day1">
                   <property name="styleSheet">
                    <string notr="true">border-bottom-left-radius: 0px;
 border-bottom-right-radius: 0px;</string>
@@ -902,7 +902,7 @@ border-bottom-right-radius: 0px;</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="ll_yesterday_date">
+                 <widget class="QLabel" name="ll_week1">
                   <property name="styleSheet">
                    <string notr="true">border-top-left-radius: 0px;
 border-top-right-radius: 0px;</string>
@@ -963,7 +963,7 @@ border-top-right-radius: 0px;</string>
                 <number>2</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_14">
+                <widget class="QLabel" name="ll_type_icon1">
                  <property name="text">
                   <string/>
                  </property>
@@ -979,7 +979,7 @@ border-top-right-radius: 0px;</string>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_15">
+                <widget class="QLabel" name="ll_type1">
                  <property name="text">
                   <string>晴</string>
                  </property>
@@ -1008,7 +1008,7 @@ border-top-right-radius: 0px;</string>
                 <number>2</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_16">
+                <widget class="QLabel" name="ll_type_icon2">
                  <property name="text">
                   <string/>
                  </property>
@@ -1021,7 +1021,7 @@ border-top-right-radius: 0px;</string>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_17">
+                <widget class="QLabel" name="ll_type2">
                  <property name="text">
                   <string>大雨</string>
                  </property>
@@ -1050,7 +1050,7 @@ border-top-right-radius: 0px;</string>
                 <number>2</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_18">
+                <widget class="QLabel" name="ll_type_icon3">
                  <property name="text">
                   <string/>
                  </property>
@@ -1066,7 +1066,7 @@ border-top-right-radius: 0px;</string>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_19">
+                <widget class="QLabel" name="ll_type3">
                  <property name="text">
                   <string>多云</string>
                  </property>
@@ -1095,7 +1095,7 @@ border-top-right-radius: 0px;</string>
                 <number>2</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_21">
+                <widget class="QLabel" name="ll_type_icon4">
                  <property name="text">
                   <string/>
                  </property>
@@ -1108,7 +1108,7 @@ border-top-right-radius: 0px;</string>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_20">
+                <widget class="QLabel" name="ll_type4">
                  <property name="text">
                   <string>阵雨</string>
                  </property>
@@ -1137,7 +1137,7 @@ border-top-right-radius: 0px;</string>
                 <number>2</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_22">
+                <widget class="QLabel" name="ll_type_icon5">
                  <property name="text">
                   <string/>
                  </property>
@@ -1150,7 +1150,7 @@ border-top-right-radius: 0px;</string>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_23">
+                <widget class="QLabel" name="ll_type5">
                  <property name="text">
                   <string>暴雪</string>
                  </property>
@@ -1179,7 +1179,7 @@ border-top-right-radius: 0px;</string>
                 <number>2</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_24">
+                <widget class="QLabel" name="ll_type_icon6">
                  <property name="text">
                   <string/>
                  </property>
@@ -1192,7 +1192,7 @@ border-top-right-radius: 0px;</string>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_25">
+                <widget class="QLabel" name="ll_type6">
                  <property name="text">
                   <string>阴</string>
                  </property>
@@ -1230,7 +1230,7 @@ border-top-right-radius: 0px;</string>
               <number>4</number>
              </property>
              <item>
-              <widget class="QLabel" name="label_27">
+              <widget class="QLabel" name="ll_air1">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(121, 184, 0);</string>
                </property>
@@ -1243,7 +1243,7 @@ border-top-right-radius: 0px;</string>
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_30">
+              <widget class="QLabel" name="ll_air2">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(255, 187, 23);</string>
                </property>
@@ -1256,7 +1256,7 @@ border-top-right-radius: 0px;</string>
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_29">
+              <widget class="QLabel" name="ll_air3">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(255, 87, 97);</string>
                </property>
@@ -1269,7 +1269,7 @@ border-top-right-radius: 0px;</string>
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_31">
+              <widget class="QLabel" name="ll_air4">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(235, 17, 27);</string>
                </property>
@@ -1282,7 +1282,7 @@ border-top-right-radius: 0px;</string>
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_28">
+              <widget class="QLabel" name="ll_air5">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(170, 0, 0);</string>
                </property>
@@ -1295,7 +1295,7 @@ border-top-right-radius: 0px;</string>
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_26">
+              <widget class="QLabel" name="ll_air6">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(110, 0, 0);</string>
                </property>
@@ -1365,7 +1365,7 @@ border-top-right-radius: 0px;</string>
                  <number>8</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_50">
+                 <widget class="QLabel" name="ll_wind_name1">
                   <property name="styleSheet">
                    <string notr="true">border-bottom-left-radius: 0px;
 border-bottom-right-radius: 0px;</string>
@@ -1379,7 +1379,7 @@ border-bottom-right-radius: 0px;</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="label_51">
+                 <widget class="QLabel" name="ll_wind1">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -1423,7 +1423,7 @@ border-top-right-radius: 0px;</string>
                  <number>8</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_48">
+                 <widget class="QLabel" name="ll_wind_name2">
                   <property name="styleSheet">
                    <string notr="true">border-bottom-left-radius: 0px;
 border-bottom-right-radius: 0px;</string>
@@ -1437,7 +1437,7 @@ border-bottom-right-radius: 0px;</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="label_49">
+                 <widget class="QLabel" name="ll_wind2">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -1481,7 +1481,7 @@ border-top-right-radius: 0px;</string>
                  <number>8</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_46">
+                 <widget class="QLabel" name="ll_wind_name3">
                   <property name="styleSheet">
                    <string notr="true">border-bottom-left-radius: 0px;
 border-bottom-right-radius: 0px;</string>
@@ -1495,7 +1495,7 @@ border-bottom-right-radius: 0px;</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="label_47">
+                 <widget class="QLabel" name="ll_wind3">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -1539,7 +1539,7 @@ border-top-right-radius: 0px;</string>
                  <number>8</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_44">
+                 <widget class="QLabel" name="ll_wind_name4">
                   <property name="styleSheet">
                    <string notr="true">border-bottom-left-radius: 0px;
 border-bottom-right-radius: 0px;</string>
@@ -1553,7 +1553,7 @@ border-bottom-right-radius: 0px;</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="label_45">
+                 <widget class="QLabel" name="ll_wind4">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -1597,7 +1597,7 @@ border-top-right-radius: 0px;</string>
                  <number>8</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_42">
+                 <widget class="QLabel" name="ll_wind_name5">
                   <property name="styleSheet">
                    <string notr="true">border-bottom-left-radius: 0px;
 border-bottom-right-radius: 0px;</string>
@@ -1611,7 +1611,7 @@ border-bottom-right-radius: 0px;</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="label_43">
+                 <widget class="QLabel" name="ll_wind5">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -1655,7 +1655,7 @@ border-top-right-radius: 0px;</string>
                  <number>8</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="label_40">
+                 <widget class="QLabel" name="ll_wind_name6">
                   <property name="styleSheet">
                    <string notr="true">border-bottom-left-radius: 0px;
 border-bottom-right-radius: 0px;</string>
@@ -1669,7 +1669,7 @@ border-bottom-right-radius: 0px;</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="label_41">
+                 <widget class="QLabel" name="ll_wind6">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                     <horstretch>0</horstretch>

@@ -23,6 +23,7 @@ public:
 private:
     void updateTodayWeather(Ui::MainWindow *ui,WeatherData *weatherData);
     void updateTodayWeatherExtraInfo(Ui::MainWindow *ui,WeatherData *weatherData);
+    void updateRecentDayWeather(Ui::MainWindow *ui,WeatherData *weatherData);
 };
 
 #endif // UIUPDATER_H
