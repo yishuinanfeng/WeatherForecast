@@ -92,6 +92,7 @@ QList<UiRecentDayWeather>* UiDataHandler::getRecentDayWeatherExtraInfo(WeatherDa
         uiRecentDayWeather.dayWeek = forecast.week;
         uiRecentDayWeather.date = forecast.date;
         uiRecentDayWeather.type = forecast.type;
+        uiRecentDayWeather.icon = weatherTypeMap[forecast.type];
 
         if(forecast.aqi > 300){
             uiRecentDayWeather.airQuality = "严重";

@@ -16,6 +16,7 @@ SOURCES += \
     weatherdatatransformer.cpp
 
 HEADERS += \
+    CityCodeUtil.h \
     UiWeatherBean.h \
     mainwindow.h \
     uidatahandler.h \
@@ -32,4 +33,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    json.qrc \
     main.qrc
+
+DISTFILES += \
+    res/citycode.json

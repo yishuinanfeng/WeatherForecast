@@ -4,8 +4,56 @@
 #include <QList>
 #include <ui_mainwindow.h>
 
-UiUpdater::UiUpdater()
+UiUpdater::UiUpdater(Ui::MainWindow *ui)
 {
+    weekViewList = QList<QLabel*>();
+    typeIconViewList= QList<QLabel*>();
+    typeNameViewList= QList<QLabel*>();
+    airQualityViewList= QList<QLabel*>();
+    windViewList= QList<QLabel*>();
+    windValueViewList= QList<QLabel*>();
+
+    weekViewList << ui->ll_week1
+                 << ui->ll_week2
+                 << ui->ll_week3
+                 << ui->ll_week4
+                 << ui->ll_week5
+                 << ui->ll_week6;
+
+    typeNameViewList << ui->ll_type1
+                     << ui->ll_type2
+                     << ui->ll_type3
+                     << ui->ll_type4
+                     << ui->ll_type5
+                     << ui->ll_type6;
+
+    typeIconViewList << ui->ll_type_icon1
+                 << ui->ll_type_icon2
+                 << ui->ll_type_icon3
+                 << ui->ll_type_icon4
+                 << ui->ll_type_icon5
+                 << ui->ll_type_icon6;
+
+    airQualityViewList << ui->ll_air1
+                 << ui->ll_air2
+                 << ui->ll_air3
+                 << ui->ll_air4
+                 << ui->ll_air5
+                 << ui->ll_air6;
+
+    windValueViewList << ui->ll_wind1
+                 << ui->ll_wind2
+                 << ui->ll_wind3
+                 << ui->ll_wind4
+                 << ui->ll_wind5
+                 << ui->ll_wind6;
+
+    windViewList << ui->ll_wind_name1
+                 << ui->ll_wind_name2
+                 << ui->ll_wind_name3
+                 << ui->ll_wind_name4
+                 << ui->ll_wind_name5
+                 << ui->ll_wind_name6;
 
 
 }
@@ -14,6 +62,7 @@ void UiUpdater::update(Ui::MainWindow *ui,WeatherData *weatherData)
 {
     updateTodayWeather(ui,weatherData);
     updateTodayWeatherExtraInfo(ui,weatherData);
+    updateRecentDayWeather(ui,weatherData);
 }
 
 void UiUpdater::updateTodayWeather(Ui::MainWindow *ui, WeatherData *weatherData)
@@ -68,11 +117,34 @@ void UiUpdater::updateTodayWeatherExtraInfo(Ui::MainWindow *ui, WeatherData *wea
         }
 
     }
-
-
 }
 
 void UiUpdater::updateRecentDayWeather(Ui::MainWindow *ui, WeatherData *weatherData)
 {
 
+    UiDataHandler uiDataHandler;
+    QList<UiRecentDayWeather>* uiRecentDayWeatherList = uiDataHandler.getRecentDayWeatherExtraInfo(weatherData);
+
+    for (int i = 0; i < uiRecentDayWeatherList->size();i++) {
+        if(i < weekViewList.size()){
+            weekViewList[i]->setText(uiRecentDayWeatherList->at(i).dayWeek);
+        }
+        if(i < typeIconViewList.size()){
+            QPixmap pixmap = QPixmap(uiRecentDayWeatherList->at(i).icon);
+            typeIconViewList[i]->setPixmap(pixmap);
+        }
+        if(i < typeNameViewList.size()){
+            typeNameViewList[i]->setText(uiRecentDayWeatherList->at(i).type);
+        }
+        if(i < airQualityViewList.size()){
+            airQualityViewList[i]->setText(uiRecentDayWeatherList->at(i).airQuality);
+        }
+        if(i < windViewList.size()){
+            windViewList[i]->setText(uiRecentDayWeatherList->at(i).windDirection);
+        }
+        if(i < windValueViewList.size()){
+            windValueViewList[i]->setText(uiRecentDayWeatherList->at(i).windDegree);
+        }
+
+    }
 }

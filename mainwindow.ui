@@ -867,7 +867,7 @@ border-bottom-right-radius: 0px;</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="ll_wee5">
+                 <widget class="QLabel" name="ll_week6">
                   <property name="styleSheet">
                    <string notr="true">border-top-left-radius: 0px;
 border-top-right-radius: 0px;</string>

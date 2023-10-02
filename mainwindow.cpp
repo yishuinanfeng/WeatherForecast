@@ -1,3 +1,4 @@
+#include "CityCodeUtil.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "weatherdata.h"
@@ -35,7 +36,15 @@ MainWindow::MainWindow(QWidget *parent)
     connect(networkManager,&QNetworkAccessManager::finished,this,&MainWindow::onNetReply);
 
     //1010100是北京的城市编码
-    getWeatherInfo("101010100");
+//    getWeatherInfo("101010100");
+
+    QString cityCode = CityCodeUtil::getCityCode("广州");
+    if(cityCode == ""){
+        QMessageBox::warning(this,"天气","请输入正确的城市名",QMessageBox::Ok);
+        return;
+    }
+    qDebug() << "cityCode:" << cityCode;
+    getWeatherInfo(cityCode);
 }
 
 MainWindow::~MainWindow()
@@ -65,7 +74,7 @@ void MainWindow::onNetReply(QNetworkReply *reply)
         WeatherData weatherData = weatherDataTransformer.parseJson(&byteArray);
         qDebug() << "weatherData:" << weatherData;
 
-        UiUpdater uiUpdater;
+        UiUpdater uiUpdater(ui);
         uiUpdater.update(ui,&weatherData);
     }
 }

@@ -12,7 +12,7 @@
 class UiUpdater
 {
 public:
-    UiUpdater();
+    UiUpdater(Ui::MainWindow *ui);
     /**
      * @brief update
      * @param ui
@@ -21,6 +21,13 @@ public:
     void update(Ui::MainWindow *ui,WeatherData *weatherData);
 
 private:
+    QList<QLabel*> weekViewList;
+    QList<QLabel*> typeIconViewList;
+    QList<QLabel*> typeNameViewList;
+    QList<QLabel*> airQualityViewList;
+    QList<QLabel*> windViewList;
+    QList<QLabel*> windValueViewList;
+
     void updateTodayWeather(Ui::MainWindow *ui,WeatherData *weatherData);
     void updateTodayWeatherExtraInfo(Ui::MainWindow *ui,WeatherData *weatherData);
     void updateRecentDayWeather(Ui::MainWindow *ui,WeatherData *weatherData);
