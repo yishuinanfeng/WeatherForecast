@@ -38,13 +38,13 @@ private:
 
         QJsonArray cityArray = document.array();
         for(int i = 0; i < cityArray.size(); i++){
-              QJsonValueRef cityJsonObject = cityArray[i];
-              QString cityName = cityJsonObject.toObject().value("city_name").toString();
-              QString cityCode = cityJsonObject.toObject().value("city_code").toString();
-              qDebug() << "cityName:" + cityName + "cityCode" + cityCode;
-              if(cityCode.size() > 0){
-                  cityCodeMap.insert(cityName,cityCode);
-              }
+            QJsonValueRef cityJsonObject = cityArray[i];
+            QString cityName = cityJsonObject.toObject().value("city_name").toString();
+            QString cityCode = cityJsonObject.toObject().value("city_code").toString();
+            qDebug() << "cityName:" + cityName + "cityCode" + cityCode;
+            if(cityCode.size() > 0){
+                cityCodeMap.insert(cityName,cityCode);
+            }
         }
     }
 public:
@@ -55,12 +55,13 @@ public:
 
         QString result = cityCodeMap[cityName];
 
-        if(result == nullptr){
-           result = cityCodeMap[cityName + "市"];
+        if(cityName.contains("市")){
+            cityName = cityName.remove("市");
+            result = cityCodeMap[cityName];
         }
 
         if(result == nullptr){
-           result = "";
+            result = "";
         }
 
         return result;

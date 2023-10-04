@@ -7,12 +7,20 @@
 
 UiUpdater::UiUpdater(Ui::MainWindow *ui)
 {
+    weekDayViewList = QList<QLabel*>();
     weekViewList = QList<QLabel*>();
     typeIconViewList= QList<QLabel*>();
     typeNameViewList= QList<QLabel*>();
     airQualityViewList= QList<QLabel*>();
     windViewList= QList<QLabel*>();
     windValueViewList= QList<QLabel*>();
+
+    weekDayViewList << ui->ll_week_day1
+                 << ui->ll_week_day2
+                 << ui->ll_week_day3
+                 << ui->ll_week_day4
+                 << ui->ll_week_day5
+                 << ui->ll_week_day6;
 
     weekViewList << ui->ll_week1
                  << ui->ll_week2
@@ -64,6 +72,7 @@ void UiUpdater::update(Ui::MainWindow *ui,WeatherData *weatherData)
     updateTodayWeather(ui,weatherData);
     updateTodayWeatherExtraInfo(ui,weatherData);
     updateRecentDayWeather(ui,weatherData);
+    updateTitle(ui,weatherData);
 }
 
 void UiUpdater::updateTodayWeather(Ui::MainWindow *ui, WeatherData *weatherData)
@@ -127,8 +136,18 @@ void UiUpdater::updateRecentDayWeather(Ui::MainWindow *ui, WeatherData *weatherD
     QList<UiRecentDayWeather>* uiRecentDayWeatherList = uiDataHandler.getRecentDayWeatherExtraInfo(weatherData);
 
     for (int i = 0; i < uiRecentDayWeatherList->size();i++) {
+        if(i < weekDayViewList.size()){
+            if(i == 0){
+                weekDayViewList[i]->setText("星期一");
+            }else if(i == 1){
+                weekDayViewList[i]->setText("星期二");
+            }
+            else {
+                weekDayViewList[i]->setText(uiRecentDayWeatherList->at(i).dayWeek);
+            }
+        }
         if(i < weekViewList.size()){
-            weekViewList[i]->setText(uiRecentDayWeatherList->at(i).dayWeek);
+            weekViewList[i]->setText(uiRecentDayWeatherList->at(i).date);
         }
         if(i < typeIconViewList.size()){
             QPixmap pixmap = QPixmap(uiRecentDayWeatherList->at(i).icon);
@@ -149,4 +168,11 @@ void UiUpdater::updateRecentDayWeather(Ui::MainWindow *ui, WeatherData *weatherD
         }
 
     }
+}
+
+void UiUpdater::updateTitle(Ui::MainWindow *ui, WeatherData *weatherData)
+{
+    QString date = QDateTime::fromString(weatherData->date,"yyyyMMdd").toString("yyyy/MM/dd");
+    QString title = date + " " + weatherData->data.forecast[0].week;
+    ui->ll_date->setText(title);
 }

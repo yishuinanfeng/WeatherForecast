@@ -1,4 +1,5 @@
 #include "CityCodeUtil.h"
+#include "citylineedit.cpp"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "weatherdata.h"
@@ -36,6 +37,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(networkManager,&QNetworkAccessManager::finished,this,&MainWindow::onNetReply);
 
     connect(ui->pb_search,&QPushButton::clicked,this,&MainWindow::onSearchCityClick);
+    connect(ui->le_city,&CityLineEdit::enterKeyPressed,this,&MainWindow::onSearchCityEnterClick);
     //101280501是汕头的城市编码
     getWeatherInfo("101280501");
 
@@ -89,6 +91,11 @@ void MainWindow::onSearchCityClick(bool checked)
     }
     qDebug() << "cityCode:" << cityCode;
     getWeatherInfo(cityCode);
+}
+
+void MainWindow::onSearchCityEnterClick()
+{
+    onSearchCityClick();
 }
 
 void MainWindow::contextMenuEvent(QContextMenuEvent *event)

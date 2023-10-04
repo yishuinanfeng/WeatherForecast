@@ -9,6 +9,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    citylineedit.cpp \
     main.cpp \
     mainwindow.cpp \
     uidatahandler.cpp \
@@ -18,6 +19,7 @@ SOURCES += \
 HEADERS += \
     CityCodeUtil.h \
     UiWeatherBean.h \
+    citylineedit.h \
     mainwindow.h \
     uidatahandler.h \
     uiupdater.h \

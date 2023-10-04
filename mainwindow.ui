@@ -45,7 +45,7 @@ QLabel {
     <property name="bottomMargin">
      <number>0</number>
     </property>
-    <item>
+    <item alignment="Qt::AlignVCenter">
      <widget class="QWidget" name="title" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -97,7 +97,7 @@ QLabel {
           </spacer>
          </item>
          <item>
-          <widget class="QLineEdit" name="le_city">
+          <widget class="CityLineEdit" name="le_city">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -803,7 +803,7 @@ QVBoxLayout{
 border-bottom-right-radius: 0px;</string>
                   </property>
                   <property name="text">
-                   <string>今天</string>
+                   <string>明天</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -978,7 +978,7 @@ border-top-right-radius: 0px;</string>
 border-bottom-right-radius: 0px;</string>
                   </property>
                   <property name="text">
-                   <string>昨天</string>
+                   <string>今天</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -1819,6 +1819,13 @@ border-top-right-radius: 0px;</string>
    </layout>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CityLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header location="global">citylineedit.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="main.qrc"/>
  </resources>

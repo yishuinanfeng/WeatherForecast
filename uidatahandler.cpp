@@ -1,5 +1,7 @@
 #include "uidatahandler.h"
 
+#include <QDateTime>
+
 UiDataHandler::UiDataHandler()
 {
     weatherTypeMap.insert("暴雪",":/res/type/BaoXue.png");
@@ -87,10 +89,14 @@ QList<UiRecentDayWeather>* UiDataHandler::getRecentDayWeatherExtraInfo(WeatherDa
 {
     QList<UiRecentDayWeather> *uiRecentDayWeatherList = new QList<UiRecentDayWeather>();
     UiRecentDayWeather uiRecentDayWeather = UiRecentDayWeather();
+    QString date = weather->date;
+    qDebug() << "getRecentDayWeatherExtraInfo date: " << date;
+
+    QString month = QDateTime::fromString(date,"yyyyMMdd").toString("yyyy/MM/dd").split("/")[1];
     for (QList<Forecast>::const_iterator it = weather->data.forecast.constBegin(); it != weather->data.forecast.constEnd(); ++it) {
         Forecast forecast = *it;
         uiRecentDayWeather.dayWeek = forecast.week;
-        uiRecentDayWeather.date = forecast.date;
+        uiRecentDayWeather.date = month + "/" + forecast.date;
         uiRecentDayWeather.type = forecast.type;
         uiRecentDayWeather.icon = weatherTypeMap[forecast.type];
 

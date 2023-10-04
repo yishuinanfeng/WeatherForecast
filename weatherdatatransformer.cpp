@@ -33,6 +33,8 @@ WeatherData WeatherDataTransformer::parseJson(QByteArray *byteArray)
         weatherData.date = date;
         weatherData.time = time;
 
+        qDebug() << "weatherData time: " << weatherData.time;
+
         QJsonObject cityObject = jsonObj.value("cityInfo").toObject();
         QJsonObject dataObject = jsonObj.value("data").toObject();
 
@@ -81,7 +83,7 @@ Data WeatherDataTransformer::getDataFromJson(QJsonObject *dataObject)
         QJsonObject jsonObj = value.toObject();
         // 处理每个元素
         Forecast forecast;
-        forecast.date = jsonObj.value("aqi").toString();
+        forecast.date = jsonObj.value("date").toString();
         forecast.high = jsonObj.value("high").toString();
         forecast.low = jsonObj.value("low").toString();
         forecast.ymd = jsonObj.value("ymd").toString();

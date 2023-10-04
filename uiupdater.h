@@ -22,6 +22,7 @@ public:
 
 private:
     QList<QLabel*> weekViewList;
+    QList<QLabel*> weekDayViewList;
     QList<QLabel*> typeIconViewList;
     QList<QLabel*> typeNameViewList;
     QList<QLabel*> airQualityViewList;
@@ -31,6 +32,7 @@ private:
     void updateTodayWeather(Ui::MainWindow *ui,WeatherData *weatherData);
     void updateTodayWeatherExtraInfo(Ui::MainWindow *ui,WeatherData *weatherData);
     void updateRecentDayWeather(Ui::MainWindow *ui,WeatherData *weatherData);
+    void updateTitle(Ui::MainWindow *ui,WeatherData *weatherData);
 };
 
 #endif // UIUPDATER_H
