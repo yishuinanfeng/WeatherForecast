@@ -12,6 +12,7 @@ UiDataHandler::UiDataHandler()
     weatherTypeMap.insert("大雪",":/res/type/DaXue.png");
     weatherTypeMap.insert("大雨",":/res/type/DaYu.png");
     weatherTypeMap.insert("中雨",":/res/type/DongYu.png");
+    weatherTypeMap.insert("小雨",":/res/type/XiaoYu.png");
     weatherTypeMap.insert("多云",":/res/type/DuoYun.png");
     weatherTypeMap.insert("浮尘",":/res/type/FuChen.png");
     weatherTypeMap.insert("雷阵雨",":/res/type/LeiZhenYu.png");
@@ -26,7 +27,6 @@ UiDataHandler::UiDataHandler()
     weatherTypeMap.insert("小到中雪",":/res/type/XiaoDaoZhongXue.png");
     weatherTypeMap.insert("小到中雨",":/res/type/XiaoDaoZhongYu.png");
     weatherTypeMap.insert("小雪",":/res/type/XiaoXue.png");
-    weatherTypeMap.insert("小雨","::/res/type/XiaoYu.png");
     weatherTypeMap.insert("雪",":/res/type/Xue.png");
     weatherTypeMap.insert("扬沙",":/res/type/YangSha.png");
     weatherTypeMap.insert("阴",":/res/type/Yin.png");
@@ -96,21 +96,33 @@ QList<UiRecentDayWeather>* UiDataHandler::getRecentDayWeatherExtraInfo(WeatherDa
 
         if(forecast.aqi > 300){
             uiRecentDayWeather.airQuality = "严重";
+            uiRecentDayWeather.style = "background-color: rgb(110, 0, 0);";
+
         }else if (forecast.aqi > 250 && 300 <= forecast.aqi) {
             uiRecentDayWeather.airQuality = "重度";
+            uiRecentDayWeather.style = "background-color: rgb(170, 0, 0);";
+
         }else if(forecast.aqi > 200 && 250 <= forecast.aqi){
             uiRecentDayWeather.airQuality = "中度";
+            uiRecentDayWeather.style = "background-color: rgb(200, 20, 0);";
+
         }
         else if(forecast.aqi > 150 && 200 <= forecast.aqi){
             uiRecentDayWeather.airQuality = "轻度";
+            uiRecentDayWeather.style = "background-color: rgb(235, 17, 27);";
+
         }else if(forecast.aqi > 100 && 150 <= forecast.aqi){
             uiRecentDayWeather.airQuality = "轻微";
+            uiRecentDayWeather.style = "background-color: rgb(255, 87, 97);";
+
         }
         else if(forecast.aqi > 50 && 100 <= forecast.aqi){
             uiRecentDayWeather.airQuality = "良";
+            uiRecentDayWeather.style = "background-color: rgb(255, 187, 23);";
         }
         else if(forecast.aqi > 0 || 50 <= forecast.aqi){
             uiRecentDayWeather.airQuality = "优";
+            uiRecentDayWeather.style = "background-color: rgb(121, 184, 0);";
         }
 
         uiRecentDayWeather.dayWeek = forecast.week;

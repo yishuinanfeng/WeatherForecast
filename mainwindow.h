@@ -33,6 +33,7 @@ private:
 
 public  slots:
     void onNetReply(QNetworkReply *reply);
+    void onSearchCityClick(bool checked = false);
 
     // QWidget interface
 protected:

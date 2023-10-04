@@ -43,6 +43,7 @@ public:
     QString icon = "";
     QString airQuality = "";
     QString windDirection = "";
+    QString style = "";
     QString windDegree = "";
 };
 

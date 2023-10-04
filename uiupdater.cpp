@@ -2,6 +2,7 @@
 #include "uiupdater.h"
 
 #include <QList>
+#include <QStyle>
 #include <ui_mainwindow.h>
 
 UiUpdater::UiUpdater(Ui::MainWindow *ui)
@@ -138,6 +139,7 @@ void UiUpdater::updateRecentDayWeather(Ui::MainWindow *ui, WeatherData *weatherD
         }
         if(i < airQualityViewList.size()){
             airQualityViewList[i]->setText(uiRecentDayWeatherList->at(i).airQuality);
+            airQualityViewList[i]->setStyleSheet(uiRecentDayWeatherList->at(i).style);
         }
         if(i < windViewList.size()){
             windViewList[i]->setText(uiRecentDayWeatherList->at(i).windDirection);

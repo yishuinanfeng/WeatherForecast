@@ -35,16 +35,10 @@ MainWindow::MainWindow(QWidget *parent)
     networkManager = new QNetworkAccessManager();
     connect(networkManager,&QNetworkAccessManager::finished,this,&MainWindow::onNetReply);
 
-    //1010100是北京的城市编码
-//    getWeatherInfo("101010100");
+    connect(ui->pb_search,&QPushButton::clicked,this,&MainWindow::onSearchCityClick);
+    //101280501是汕头的城市编码
+    getWeatherInfo("101280501");
 
-    QString cityCode = CityCodeUtil::getCityCode("广州");
-    if(cityCode == ""){
-        QMessageBox::warning(this,"天气","请输入正确的城市名",QMessageBox::Ok);
-        return;
-    }
-    qDebug() << "cityCode:" << cityCode;
-    getWeatherInfo(cityCode);
 }
 
 MainWindow::~MainWindow()
@@ -77,6 +71,24 @@ void MainWindow::onNetReply(QNetworkReply *reply)
         UiUpdater uiUpdater(ui);
         uiUpdater.update(ui,&weatherData);
     }
+}
+
+void MainWindow::onSearchCityClick(bool checked)
+{
+    qDebug() << "onSearchCityClick:";
+    QString inputCity = ui->le_city->text();
+    if(inputCity == nullptr || inputCity == ""){
+        QMessageBox::warning(this,"天气","请输入正确的城市名",QMessageBox::Ok);
+        return;
+    }
+
+    QString cityCode = CityCodeUtil::getCityCode(inputCity);
+    if(cityCode == ""){
+        QMessageBox::warning(this,"天气","请输入正确的城市名",QMessageBox::Ok);
+        return;
+    }
+    qDebug() << "cityCode:" << cityCode;
+    getWeatherInfo(cityCode);
 }
 
 void MainWindow::contextMenuEvent(QContextMenuEvent *event)
