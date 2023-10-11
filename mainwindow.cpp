@@ -9,8 +9,9 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonParseError>
-#include <UiUpdater.h>
-#include <WeatherDataTransformer.h>
+#include <QPainter>
+#include <QPoint>
+#include <weatherdatatransformer.h>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -29,6 +30,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     exitMenu->addAction(exitAction);
 
+    ui->ll_high_curve->installEventFilter(this);
+    ui->ll_low_curve->installEventFilter(this);
+
     connect(exitAction,&QAction::triggered,this,[=]{
         qApp->exit(0);
     });
@@ -38,8 +42,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->pb_search,&QPushButton::clicked,this,&MainWindow::onSearchCityClick);
     connect(ui->le_city,&CityLineEdit::enterKeyPressed,this,&MainWindow::onSearchCityEnterClick);
-    //101280501是汕头的城市编码
-    getWeatherInfo("101280501");
+
+    QString defaultCityCode = DEFAULT_CITY_CODE;
+    getWeatherInfo(defaultCityCode);
 
 }
 
@@ -70,8 +75,10 @@ void MainWindow::onNetReply(QNetworkReply *reply)
         WeatherData weatherData = weatherDataTransformer.parseJson(&byteArray);
         qDebug() << "weatherData:" << weatherData;
 
-        UiUpdater uiUpdater(ui);
-        uiUpdater.update(ui,&weatherData);
+        uiUpdater = new UiUpdater(ui);
+        uiUpdater->update(ui,&weatherData);
+
+        update();
     }
 }
 
@@ -96,6 +103,20 @@ void MainWindow::onSearchCityClick(bool checked)
 void MainWindow::onSearchCityEnterClick()
 {
     onSearchCityClick();
+}
+
+void MainWindow::drawHighCurve()
+{
+    if(uiUpdater != nullptr){
+       uiUpdater->drawHighCurve(ui);
+    }
+}
+
+void MainWindow::drawLowCurve()
+{
+    if(uiUpdater != nullptr){
+        uiUpdater->drawLowCurve(ui);
+    }
 }
 
 void MainWindow::contextMenuEvent(QContextMenuEvent *event)
@@ -131,6 +152,19 @@ void MainWindow::getWeatherInfo(QString cityCode)
 
     //        reply->deleteLater();
     //    });
+}
+
+bool MainWindow::eventFilter(QObject *watched, QEvent *event)
+{
+    if(watched == ui->ll_high_curve && event->type() == QEvent::Paint){
+        drawHighCurve();        
+    }
+
+    if(watched == ui->ll_low_curve && event->type() == QEvent::Paint){
+        drawLowCurve();        
+    }
+
+    return QWidget::eventFilter(watched,event);
 }
 
 

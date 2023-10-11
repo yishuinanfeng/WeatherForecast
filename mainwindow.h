@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "uiupdater.h"
+
 #include <QMainWindow>
 #include <QMenu>
 #include <QtNetwork/QNetworkAccessManager>
@@ -10,6 +12,9 @@
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
+//汕头编码
+#define DEFAULT_CITY_CODE "101280501"
+#define DEFAULT_CURVE_PADDING 12
 
 class MainWindow : public QMainWindow
 {
@@ -31,10 +36,16 @@ private:
 
     QNetworkAccessManager *networkManager;
 
+    UiUpdater *uiUpdater = nullptr;
+
 public  slots:
     void onNetReply(QNetworkReply *reply);
     void onSearchCityClick(bool checked = false);
     void onSearchCityEnterClick();
+
+    void drawHighCurve();
+    void drawLowCurve();
+
 
     // QWidget interface
 protected:
@@ -44,5 +55,9 @@ protected:
 
     void getWeatherInfo(QString cityCode);
 
+
+    // QObject interface
+public:
+    bool eventFilter(QObject *watched, QEvent *event);
 };
 #endif // MAINWINDOW_H

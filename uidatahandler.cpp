@@ -51,7 +51,18 @@ UiTodayWeather* UiDataHandler::getTodayWeatherInfo(WeatherData *weather)
     uiTodayWeather->city = weather->cityInfo.city;
     uiTodayWeather->tempture = weather->data.wendu + "℃";
     uiTodayWeather->type = type;
-    uiTodayWeather->temptureRange = weather->data.forecast[1].low + "~" + weather->data.forecast[1].high;
+
+
+    QString highTemp = weather->data.forecast[1].high;
+    QString lowTemp = weather->data.forecast[1].low;
+    if(weather->data.forecast[1].high.split(" ").size() > 1){
+       highTemp = weather->data.forecast[1].high.split(" ")[1];
+    }
+
+    if(weather->data.forecast[1].low.split(" ").size() > 1){
+       lowTemp = weather->data.forecast[1].low.split(" ")[1];
+    }
+    uiTodayWeather->temptureRange = lowTemp + "~" + highTemp;
     return uiTodayWeather;
 }
 

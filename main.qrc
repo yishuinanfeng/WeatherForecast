@@ -47,5 +47,7 @@
         <file>res/wind_southwest.png</file>
         <file>res/wind_south.png</file>
         <file>res/wind_southeast.png</file>
+        <file>res/dog.jpeg</file>
+        <file>res/cat.jpeg</file>
     </qresource>
 </RCC>
